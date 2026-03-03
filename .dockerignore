@@ -1,0 +1,10 @@
+.git
+.gitignore
+README.md
+DEPLOY.md
+*.md
+.DS_Store
+node_modules
+.env
+.env.*
+k8s
