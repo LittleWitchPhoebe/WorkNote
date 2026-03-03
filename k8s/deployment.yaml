@@ -15,9 +15,8 @@ spec:
       labels:
         app: worknote
     spec:
-      # 若镜像仓库为私有，取消下面注释并先创建 imagePullSecrets
-      # imagePullSecrets:
-      #   - name: aliyun-acr-secret
+      imagePullSecrets:
+        - name: aliyun-acr-secret
       containers:
         - name: worknote
           image: crpi-tdt2zc9s3n24ef5b.cn-hangzhou.personal.cr.aliyuncs.com/test017/test:latest

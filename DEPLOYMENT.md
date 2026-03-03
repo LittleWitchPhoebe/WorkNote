@@ -10,12 +10,13 @@
 
 - **GitHub**：源码仓库 `https://github.com/LittleWitchPhoebe/WorkNote`
 - **阿里云 ACR**：镜像仓库已关联上述 GitHub 仓库，可在控制台配置“代码变更时自动构建”
+  - ACR **命名空间**：`test017`，**仓库名**：`test`，故镜像地址为 `.../test017/test:latest`
 - **Minikube**：本地 Kubernetes，从 ACR 拉取镜像并部署
 
 ## 一、阿里云 ACR 配置（首次）
 
 1. 登录 [阿里云容器镜像服务](https://cr.console.aliyun.com/)
-2. 进入你的命名空间 / 仓库：`test017/test`
+2. 进入你的仓库：命名空间 **test017**、仓库名 **test**（即 `test017/test`）
 3. 在仓库中配置 **构建**：
    - 构建上下文路径：`app`（因为 Dockerfile 和 `index.html` 在 `app/` 下）
    - Dockerfile 路径：`Dockerfile`（相对于构建上下文）或 `app/Dockerfile`（相对于仓库根，依控制台选项而定）
