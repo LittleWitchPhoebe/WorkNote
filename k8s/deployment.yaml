@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worknote
+  namespace: worknote
+  labels:
+    app: worknote
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worknote
+  template:
+    metadata:
+      labels:
+        app: worknote
+    spec:
+      # 若镜像仓库为私有，取消下面注释并先创建 imagePullSecrets
+      # imagePullSecrets:
+      #   - name: aliyun-acr-secret
+      containers:
+        - name: worknote
+          image: crpi-tdt2zc9s3n24ef5b.cn-hangzhou.personal.cr.aliyuncs.com/test017/test:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "32Mi"
+              cpu: "50m"
+            limits:
+              memory: "64Mi"
+              cpu: "100m"
